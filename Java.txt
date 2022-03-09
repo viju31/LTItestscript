@@ -1,0 +1,902 @@
+-  JAVA flow control
+	- conditional statements
+	- looping statements
+	- switching statement
+	- foreach loop
+- OOPs
+	- packages
+	- class and object
+	- constrctor
+	- static method
+	- access modifiers
+	- inheritance 
+--------------------------------------------------
+Conditional Statement:
+
+Want to execute block of code based on certain condition satisfied.
+
+1. if statement : execute block of code only when the condition is true.
+
+syntax:
+
+if(condition){
+-------
+-------
+}
+
+
+2. if else statement: execute block of code either condition is true or false.
+
+syntax:
+
+if(condition){
+-------
+-------
+}else{
+-------
+-------
+}
+
+
+3. if elseif statement: check for multiple condition, execute block of code when the condition is satidfied
+
+syntax:
+
+if(condition){
+-------
+-------
+}elseif(condition){
+-------
+-------
+} elseif(condition){
+-------
+-------
+}else{
+----------
+----------
+}
+
+4. switch statement: switch to matching case and execute the block.
+
+switch(expression){
+
+case value1:
+	------
+	------
+	break;
+case value2:
+	------
+	------
+	break;
+.
+.
+.
+default:
+	-----
+	-----
+}
+
+--------------------------------------------
+Looping statement:
+
+want to execute block of code for multiple number of times.
+
+1. for loop
+
+syntax:
+
+for(initialization;condition;increament/decreament){
+-------
+-------
+}
+
+
+for(int i=0;i<=5;i++){
+	System.out.println(i);
+}
+
+output:
+0<=5 --> 0
+1<=5 --> 1
+2<=5 --> 2
+3<=5 --> 3
+4<=5 --> 4
+5<=5 --> 5
+6<=5 -->loop stops here
+
+when you know how many nmumnber of times, loop should be executed.
+
+------------------------------------------
+While loop:
+
+executes block of code until the condition has become true.
+
+
+syntax:
+
+while(condition){
+-------
+-------
+}
+
+Ex:
+
+int i=0;
+while(i<5){
+	System.out.println(i);
+	i++;
+}
+
+------------------------------
+
+do while:
+
+whether the condition id true/false, still block of code will be executed once.
+
+
+syntax:
+
+do{
+
+------
+-----
+}while(condition)
+-----------------------------------------------
+for each loop:
+
+- enhanced for loop
+- use for each loop to access the data fronm array/collections.
+
+Array:
+
+we store set of values of same datatype to a variable.
+
+int a=10;
+
+int a[]={10,20,30,40,50};
+
+To access each and every value from an array, use for each loop.
+
+syntax:
+
+for(variable:arrayvaribale){
+-----
+-----
+}
+
+Example:
+
+create an array like below
+
+int a[]={10,20,30,40,50};
+
+add number 5 along with array value and display.
+
+Output:
+15
+25
+35
+45
+55
+
+break; // break the iteration
+continue; //skips the iteration
+-------------------------------------------------------
+class:
+
+- blueprint
+- class consis of properties/variables/attributes, methods/blocks/funcation, constructor, initializers 
+
+syntax:
+
+class class-name{
+
+}
+
+Example:
+
+class sample{
+
+	int a=10;
+
+}
+
+Method:
+
+- to perform specific task/function
+
+syntax:
+
+access-specifier return-type method-name(arg list){
+------
+------
+}
+
+Example:
+
+public void addition(int a, int b){
+	int c=a+b;
+	System.out.println(c);
+}
+
+access specifiers - public, private, default, protected
+return-type - void or int, String, char etc
+
+Object:
+
+- instance of class is object
+
+syntax:
+
+classname obj-name=new classname();
+
+Through object we can able to access/invoke methods, properties and constrctor.
+
+Note:
+
+static method and static variable can be accessed directly inside of static method, without creating of an object.
+
+instance variable and normal method can be accessed inside static main method by creating of an object ly.
+
+Static Method & variable created to manage memory effeiently.
+-------------------------------------------------
+Constructor:
+
+- special method
+- it has a block of code similar to normal method
+- constructor will be gets called at the time of object created.
+
+Types:
+
+1. default constructor
+2. parameterized construtor
+
+Default constructor:
+
+syntax:
+
+access-specifier class-name(){
+
+
+}
+
+parameterized construtor:
+
+syntax:
+access-specifier class-name(args){
+
+
+}
+----------------------------------------------
+Static block:
+
+- block of code that will be executed when the class first loaded into JVM.
+- help us to initialize static data members
+
+syntax:
+
+static{
+
+----
+---
+}
+--------------------------------------------------------
+Inheritance:
+
+Inheritance helping us to inherit the properties/behaviours of parent class.
+
+if child class inherit/acquire properties of parent class, child class can access both parent and child class properties.
+
+class Animal{
+
+	//parent
+	public void eat(){
+
+	}
+
+}
+
+class Dog extends Animal{
+
+	//child
+	public void bark(){
+
+	}
+
+
+}
+
+Types of inheritance:
+
+1. single level
+
+Example:
+
+class classA{
+
+}
+
+class classB extends classA{
+
+}
+
+
+2. multi level
+
+class classA{
+
+}
+
+class classB extends classA{
+
+}
+
+class classC extends classB{
+
+}
+
+
+3. hierachical 
+
+class classA{
+
+}
+
+class classB extends classA{
+
+}
+
+class classC extends classA{
+
+}
+
+
+			classA
+
+		classB         ClassC
+
+Day 6:
+
+- continue from Inheritance
+- polymorphism 
+- super , final , this
+- encapsulation
+- packages
+- access modifiers
+- Abstract classes and methods
+- Interfaces
+- Exceptional Handling in java
+
+Inheritance:
+
+child class/subclass inherit the properties of parentclass/superclass is calle inheritance.
+
+- higher reusability 
+
+- Good practice is , have all the common funcationalities created in parent/superclass. So that child class can inherit/reuse those existing functionalities from parent class.
+
+- implement inheritance, use extends keyword
+
+Types:
+
+1. single level inheritance
+2. multilevel inheritance
+3. Hierachical inheritance- more than one class can inherit the properties of parent class
+
+Single Level inheritance:
+
+class Animal{
+
+	public void eat(){
+		System.out.println("eating...");
+	}
+}
+
+class Cat extends Animal{
+
+	public void meow(){
+		System.out.println("Meowwww");
+	}
+
+}
+
+Multilevel Inheritance:
+
+class Animal{
+
+	public void eat(){
+		System.out.println("eating...");
+	}
+}
+
+class Dog extends Animal{
+
+	public void bark(){
+		System.out.println("barking...");
+	}
+
+}
+
+class BabyDog extends Dog{
+	public void weep(){
+		System.out.println("weeping...");
+	}
+
+}
+
+class sample{
+
+	public static void main(String args[]){
+		BabyDog obj=new BabyDog();
+		obj.weep();
+		obj.bark();
+		obj.eat();
+	}	
+
+}
+
+Hierarchical Inheritance:
+
+class Animal{
+
+	public void eat(){
+		System.out.println("eating...");
+	}
+}
+
+class Dog extends Animal{
+
+	public void bark(){
+		System.out.println("barking...");
+	}
+
+}
+
+class Cat extends Animal{
+	public void meow(){
+		System.out.println("meowww...");
+	}
+}
+
+class sample{
+	public static void main(String args[]){
+
+		Cat c=new Cat();
+		c.eat();
+		c.meow();
+
+		Dog d=new Dog();	
+		d.eat();
+		d.bark();		
+		
+	}	
+
+}
+
+---------------------------------------------------------------------
+
+super keyword:
+
+- used to refer instance of its direct/immediate super class/parent class.
+
+- It is usedd to call parent class constructor
+- It is used to call parent class member/method
+
+
+This keyword:
+
+- refers to current object from any method or constructor.
+
+	class ThisSample{
+
+	int id;
+	String name;
+	
+	public Person(int id, String name){
+		this.id=id;
+		this.name=name;
+	}
+}
+
+-----------------------------------------------------------------------------
+
+Polymorphism:
+
+- performing task in different forms
+- one function/method will behave in different forms
+
+Ex: person can play a different role as employee, interviewer, sportsman etc
+
+
+1. Method Overloading: method name is same, different argument list(number of argument/type of argument is different). This we referred as compile time polymorphism.
+
+2. Method overridding: This can be referred run time polymorphism. child class has same method signature as parent class.
+
+- subclass/child class overrides the method of parent class
+
+---------------------------------------------------------------------
+
+Final Modifier:
+
+- like constant, once value is assigned, it can not be changed.
+- Final keyword can be used along with method, variable or class.
+
+Final variable is,
+
+	final int a=10; -> a value cannot be changed
+
+Final method,
+
+	public final void finalmethod(){
+		System.out.println("final method");
+	}
+
+- final method cannot be overridden in subclass. 
+
+Final class - cannot be subclassed at all.
+
+Note: abstract and final keyword cannot be used at the same time.
+
+-----------------------------------------------------------------
+
+Abstract class: (hiding implentation and showing funcationality to user)
+
+- provides common behaviour/method/functions accross subclasses.
+- abstarct class can have abstract method or non-abstract method also
+- abstarct method will not have implementation.
+
+	public abstract void method();
+
+subclass1 - use method with different implementation
+
+subclass2- use method with some other different implementation
+
+- abstract class cannot be instantiated(we cannot create an object for abstract class).
+
+- final method can also be implemented in abstract class
+
+- all the subclass of abstract class, should implement abstract method.
+
+- constructor can also be created in abstract class.
+----------------------------------------------------------------------------
+
+Interface:
+
+- multiple inheritancecan be achieved through interface.
+- methods are abstract in interface. Those method will not have any implementtaion
+- implements keyword
+- Interfcae cannot have constructors
+- variables can be static final
+
+----------------------------------------------------------------------------
+
+Access Modifiers:
+
+1. public: can be accessed within
+	- same class
+	- same package, anywhere
+	- different package anywhere
+
+2. private : can be accessed only within same class,not outside of class
+3. protected: can be accessed within
+	- same class
+	- same package- subclass
+	- same package - not subclass
+	- different package - subclass
+4. default : can be accessed within,
+	- same class		
+	- same package - subclass
+	- same package - not subclass
+
+Note: default methods allowed only in interfaces
+
+---------------------------------------------------------------------------
+
+Packages:
+
+- helpful for grouping classes, subclass and interfaces 
+- to avoid naming conflicts
+
+user- defined packages:
+
+packA		packB
+
+sample.java	sample.java	
+classA.java	classB.java
+
+
+packC
+
+sample.java
+sample.java ---> not allowed to create
+
+packD -> access sample.java from packB. Is it possible?
+
+We have to use import statemenet to import the packages.
+
+example:
+
+import packB.sample;
+
+import packB.*;
+
+In-Built packages:
+
+import java.util.*; ---> Scanner, date and time etc
+
+import java.io.*; ---> file reading, file writing etc....
+
+import java.net.*; ---> classes of network supports
+
+etc
+
+----------------------------------------------------------------------------
+ Array:
+
+- collection of similar type of data stored
+- store fixed set of element in array
+
+Declare Array:
+
+aarayref=new datatype[size];
+
+ex:
+
+int a[]=new int[5];
+
+1. String, String Buillder and String Buffer
+2. Date and Time API
+3. Generics & collections 
+	- what is generics?
+	- what is collections?
+	- different types of interfaces?
+	- implement those collections with interface
+
+
+----------------------------------------------------
+
+String:
+
+- It is also treated as an object in java
+- sequence of character together forms string
+- word/sentence
+
+- Strings are immutable.
+
+2 ways, Strings can be created.
+
+1. By using literal
+
+Example:
+
+	String s1="saranya";
+	String s2="saranya";
+
+
+	String constant pool
+	
+	s1 & s2---> refers to ---> saranya
+
+
+2. By using new keyword
+
+	String s1=new String("saranya");  
+
+String Methods:
+
+String s1=new String("Hello Welcome");
+		
+		System.out.println(s1);
+		//methods
+		System.out.println(s1.charAt(0));//index of 0 is H , index starts from 0
+		System.out.println("Length of a string is: "+s1.length());
+		System.out.println("get the substring value:"+s1.substring(5,13));// return substring of given string
+		System.out.println("Check whether s1 contains Welcome:(T/F): "+s1.contains("Welcome"));
+		System.out.println("Equality (T/F): "+s1.equals("Hello Welcome"));
+		System.out.println("Equals ignorecase(T/F): "+s1.equalsIgnoreCase("hello welcome"));
+		System.out.println("Replace of all the occurrances: "+s1.replace('l', '*'));
+		System.out.println("check string is empty(T/F):"+s1.isEmpty());
+		System.out.println("convert to uppercase:"+s1.toUpperCase());
+		System.out.println("convert to lowercase :"+s1.toLowerCase());
+		
+		String[] s3 = s1.split(" ");
+		System.out.println(s3[0]); //hello
+		System.out.println(s3[1]); //welcome
+		
+		/*String[] s4=s1.split("e");
+		System.out.println(s4[0]);
+		*/
+				
+		String s2="    Hello    ";
+		System.out.println(s2.trim());
+
+-----------------------------------------------------
+String Builder:
+
+- allow us modify the string
+- create mutable string using stringbuilder
+- StringBuilder class introduced from JAVA 5
+- more efficient than String and String Buffer
+- much more faster than string buffer
+- not thread safe
+
+-------------------------------------------------------
+
+String Buffer:
+
+- class which allow us to modify existing string
+- create mutable string
+- class introduced from Java 1
+- less efficient than STring builder
+- thread safe
+--------------------------------------------------------
+
+Date and Time API:
+
+When we dont want to mention time zones, use below APIs
+
+1. LocalTime
+2. LocatDate
+3. LocalDateTime
+
+Scenario:
+
+Based on DateTime API and period and duration classes.
+
+1. Find the date difference between today and 26-1-1950.
+
+2. Find the time difference (any 2 time)
+
+-----------------------------------------------------------
+
+Collection:
+
+- store and manipulate group of objects.
+- collection supports all operations such as insertion, sorting, deletion, searching etc
+
+- we have lot of in-built interfaces and classes , supports collections framework in java.
+
+- interfaces are list, set, queue, sortedset etc
+- classes are ArrayList, hastSet, TreeSet, HashMap etc
+
+- List, Set & Map
+
+set interface: holds unique element, rejects duplicates
+list interface: holds elements in ordered way
+		elements can be accessed using index
+		holds duplicate values
+
+map : used to map key and values
+      cannot contain duplicates
+      each key will have one unique values
+
+
+ArrayList class implements list interface:
+
+- store duplicated values
+- maintain its inserted order
+- store different type of element
+- java.util package
+
+generics:
+
+- force to use only specifc type of element into collection.
+- to deal with type safe objects
+
+advatnages:
+
+1. type-safety: we can store specifc type of objects
+2. compile time checking
+-------------------------------------------------------------
+
+day 8:
+
+1. Stream - filter , map
+
+Scenario:
+
+1. create a Arraylist to store student information such as studentid, studentname, studentmarks.
+2. list student details using Stream function
+
+3. list student details who are having marks greater than 80 using filter function.
+
+
+--------------------------------------------------------------------------------
+
+set interface:
+
+- accespt ly unique elements
+
+Hashset class implements set interfcae
+
+- does not carry inserting order
+
+--------------------------------------------
+
+Map interface:
+
+Hashmap class implements Map interface.
+
+Mapping key with values
+
+key and values are unique
+---------------------------------------------------------------------------------
+
+Building database application with JDBC connection:
+
+- JDBC is java API, helping us to connect and execute query on database.
+- JDBC uses drivers to connect with database. Those drivers are,
+
+1. JDBC-ODBC bridge driver: required ODBC drivers to be installed on client machine to connect with DB.
+
+2. native Driver : It uses client side libraries
+
+3. Network protocol driver : It is fully written in java langauge. It uses Middleware to convert JDBC calls either directly or indirectly into DB.
+
+4. Thin driver: converts JDBC calls directly into database (oracle, MySQL etc). It is fully written in Java languge.
+
+Steps required to Connect with DB:
+
+1. Register with driver class
+
+	Class.forName("oracle.jdbc.driver.OracleDriver");
+
+2. Create Connection Object- used to establish the connection to DB
+
+	Connection conn=DriverManager.getConnection("oracle url","un","psd");
+
+3.  create Statement Object - This is responsible for executing queries
+
+	createStatement() method of Connection interface
+
+	Statement stmt=conn.createStatement();
+
+4. Execute query
+
+	ResultSet rs=stmt.executeQuery("select * from Emp");
+
+5. close the connection
+
+	conn.close();
+
+
+Pre-requisites:
+
+1. Eclipse
+2. Oracle installed 
+3. ojdbc8.jar added with project
+----------------------------------------------------------------------------
+Wrapper class:
+
+- Helping us convert primitive date type to an objects.
+
+primitivedatatype wrapperclass
+
+byte - Byte
+boolean - Boolean
+char - Charaecter
+double - Double
+float - Float
+int -Integer
+long - Long
+short - Short
+
+valueOf() -> convert primitive types into corresponding wrapper objects
+
+--------------------------------------------------------------------------
+
+difference between primitive data type & reference data type:
+
+primitive datatype - reference datatype
+
+1. cannot null value - can be null value
+
+int a=10;		Demo obj;
+
+2. size of each primitive datatype is difference - size for all reference datatype is same
+
+3. primitive datatypes are pre-defined -> reference datatype is not pre-defined string
+
+4. primitive DT cannot invoke/call methods -> reference DT helping us to invoke/call methods
+
+------------------------------------------------------------------------
