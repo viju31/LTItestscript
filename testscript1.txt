@@ -4,3 +4,7 @@ public class test1{
 public void TC1(){
 System.out.println("");
 }
+@test
+public void TC2(){
+System.out.println("");
+}}
